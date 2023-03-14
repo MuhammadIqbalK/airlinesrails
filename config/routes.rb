@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     namespace :v1 do
           # get '/users', to: 'users#index'
       resources :users
+      resources :airlines
+      resources :airports
+      resources :tickets
+      resources :flights
       post "/login", to: "authentication#authenticate_user"
       
     end
