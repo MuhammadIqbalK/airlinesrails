@@ -3,10 +3,10 @@ class Flight < ApplicationRecord
     belongs_to :airline
     belongs_to :airport, class_name: "Airport", foreign_key: "airport_id"
 
-    validates :departure_airport, presence: true, length: { maximum: 100 }
+    validates :departure_airport, presence: true
     validates :arrival_airport, presence: true
     validates :departure_time, presence: true
-    validates :arrival_time, presence: true, length: { maximum: 100 },                      
+    validates :arrival_time, presence: true
     validates :price, presence: true
     validates :created_by, presence: true
   
