@@ -25,8 +25,8 @@ enum role: {
 }
 
 enum gender: {
-    pria: 1,
-    wanita: 2
+    male: 1,
+    female: 2
 }
 
 def new_attributes
@@ -36,7 +36,7 @@ def new_attributes
       email: self.email,
       contact: self.contact,
       gender: self.gender,
-      
+
       role: self.role,
       created_at: self.created_at
   }
