@@ -57,3 +57,4 @@ gem 'sassc-rails'
 # gem 'bootstrap-sass'
 gem 'sprockets-rails'
 # gem "devise", "~> 4.9"
+gem 'rails_admin'
