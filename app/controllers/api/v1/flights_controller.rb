@@ -57,8 +57,8 @@ class Api::V1::FlightsController < ApplicationController
         arrival_airport: params[:arrival_airport],
         departure_time: params[:departure_time],
         arrival_time: params[:arrival_time],
-        airline_id: params[:airline_id]
-        price: params[:price]
+        airline_id: params[:airline_id],
+        price: params[:price],
         created_by: params[:created_by]
       }
     end
