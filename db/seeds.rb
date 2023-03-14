@@ -9,12 +9,11 @@
 
 User.create([
     {
-        name: "John Doe",
-        email: "john@example.com",
+        name: "Tangguh W",
+        email: "tangguh@example.com",
         contact: "0812248293029",
         password: "1234",
         role: 1,
         gender: 1
-
     }
 ])
