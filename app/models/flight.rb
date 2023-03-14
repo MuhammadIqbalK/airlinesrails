@@ -17,7 +17,7 @@ class Flight < ApplicationRecord
           arrival_airport: self.arrival_airport,
           departure_time: self.departure_time,
           arrival_time: self.arrival_time,
-          airline_id: self.airline_id
+          airline_id: self.airline_id,
           price: self.price,
           created_by: self.created_by
       }
