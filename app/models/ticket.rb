@@ -9,7 +9,7 @@ class Ticket < ApplicationRecord
       {
         id: self.id,
         total_passenger: self.total_passenger,
-        price: self.price,
+        price: self.flight.price,
         flight_id: self.flight_id,
         user_id: self.user_id
       }
