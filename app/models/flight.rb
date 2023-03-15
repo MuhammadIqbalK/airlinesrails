@@ -1,7 +1,8 @@
 class Flight < ApplicationRecord
     belongs_to :users, dependent: :destroy
     belongs_to :airline
-    belongs_to :airport, class_name: "Airport", foreign_key: "airport_id"
+    belongs_to :departure, class_name: "Airport", foreign_key: "departure_airport"
+    belongs_to :arrival, class_name: "Airport", foreign_key: "arrival_airport"
 
     validates :departure_airport, presence: true
     validates :arrival_airport, presence: true
