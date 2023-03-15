@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
     
-  # belongs_to :users, dependent: :destroy
-  has_many :flights
+  
+  has_many :flights, class_name: "Flight", foreign_key: "created_by", dependent: :destroy
   has_many :tickets
 
   validates :name, presence: true, length: { maximum: 50 }
