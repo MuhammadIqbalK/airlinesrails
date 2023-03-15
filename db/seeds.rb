@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-<<<<<<< Updated upstream
+# <<<<<<< Updated upstream
 
 User.create([
 
@@ -53,7 +53,6 @@ User.create([
 ])
 
 Airport.create([
-
     {
      "name" => "Bandara Ngurah rai",
      "city" => "Denpasar"
@@ -61,7 +60,7 @@ Airport.create([
     
     {
      "name" => "Bandara Juanda",
-     "city" => "Surabay"
+     "city" => "Surabaya"
     },
     
     {
@@ -74,10 +73,9 @@ Airport.create([
      "city" => "jakarta"
                 
       }
-    
-    ])
+])
 
-    Airline.create([
+Airline.create([
 
  {
   "name" => "Sriwijaya Air",
@@ -102,13 +100,12 @@ Airport.create([
         
  ])
 
-  Flight.create([
-
+Flight.create([
  {
      "departure_airport" => 2,
      "arrival_airport" => 1,
-     "departure_time" => null,
-     "arrival_time" => null,
+     "departure_time" => "2023-03-25 08:30",
+     "arrival_time" => "2023-03-25 10:30",
      "airline_id" => 2,
      "price" => 130000,
      "created_by" => 1
@@ -117,31 +114,28 @@ Airport.create([
  {
     "departure_airport" => 3,
     "arrival_airport" => 2,
-    "departure_time" => null,
-    "arrival_time" => null,
+    "departure_time" => "2023-03-27 11:30",
+    "arrival_time" => "2023-03-27 13:30",
     "airline_id" => 1,
     "price" => 160000,
     "created_by" => 3
 },           
 
 
-  ])
+])
 
 
-  Ticket.create([
+Ticket.create([
 
     {
        "total_passenger" => 100,
-       "flight_id" => 1
+       "flight_id" => 1,
        "user_id" => 2
     },
    
     {
         "total_passenger" => 200,
-        "flight_id" => 2
+        "flight_id" => 2,
         "user_id" => 4
      },
-         
-   
-   
-     ])
+])

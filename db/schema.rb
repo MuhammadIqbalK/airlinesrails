@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_163421) do
 
   create_table "airlines", force: :cascade do |t|
     t.string "name"
-    t.integer "code"
+    t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,7 +34,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_163421) do
     t.datetime "departure_time"
     t.datetime "arrival_time"
     t.integer "price"
-    t.integer "create_table"
+    t.integer "airline_id"
+    t.integer "created_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
