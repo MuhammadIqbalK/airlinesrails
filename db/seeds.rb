@@ -48,50 +48,100 @@ User.create([
  "gender" => 1,
   "role" => 2
             
-  },
+  }
 
-]),
+])
 
-User.create([
+Airport.create([
 
     {
-     "name" => "Tangguh",
-     "email" => "tangguh@gmail.com",
-     "password" => "12345678",
-     "contact" => "08731212312",
-     "gender" => 1,
-     "role" => 1
-    
+     "name" => "Bandara Ngurah rai",
+     "city" => "Denpasar"
     },
     
     {
-     "name" => "widodo",
-     "email" => "widodo@gmail.com",
-     "password" => "12345678",
-     "contact" => "083166166381",
-     "gender" => 1,
-     "role" => 2
-        
+     "name" => "Bandara Juanda",
+     "city" => "Surabay"
     },
     
     {
-     "name" => "iqbal",
-     "email" => "iqbal@gmail.com",
-     "password" => "12345678",
-     "contact" => "0863716317381",
-     "gender" => 1,
-     "role" => 1
-            
+     "name" => "Bandara Adisucipto",
+     "city" => "Yogyakarta"
     },
     
     {
-     "name" => "maulana",
-     "email" => "maulana@gmail.com",
-     "password" => "12345678",
-     "contact" => "08736466616172",
-     "gender" => 1,
-      "role" => 2
+     "name" => "Bandara soekarno-hatta",
+     "city" => "jakarta"
                 
-      },
+      }
     
     ])
+
+    Airline.create([
+
+ {
+  "name" => "Sriwijaya Air",
+  "code" => "SJ"
+ },
+        
+ {
+   "name" => "Lion Air",
+   "code" => "JT"
+ },
+        
+ {
+    "name" => "Batik Air",
+    "code" => "ID"
+ },
+        
+ {
+  "name" => "Citilink",
+  "code" => "QG"
+                    
+ }
+        
+ ])
+
+  Flight.create([
+
+ {
+     "departure_airport" => 2,
+     "arrival_airport" => 1,
+     "departure_time" => null,
+     "arrival_time" => null,
+     "airline_id" => 2,
+     "price" => 130000,
+     "created_by" => 1
+ },
+
+ {
+    "departure_airport" => 3,
+    "arrival_airport" => 2,
+    "departure_time" => null,
+    "arrival_time" => null,
+    "airline_id" => 1,
+    "price" => 160000,
+    "created_by" => 3
+},           
+
+
+  ])
+
+
+  Ticket.create([
+
+    {
+       "total_passenger" => 100,
+       "flight_id" => 1
+       "user_id" => 2
+    },
+   
+    {
+        "total_passenger" => 200,
+        "flight_id" => 2
+        "user_id" => 4
+     },
+         
+   
+   
+     ])
