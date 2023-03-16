@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :tickets
       resources :flights
       post "/login", to: "authentication#authenticate_user"
+      get '/search', to: "tickets#search"
       
     end
   end

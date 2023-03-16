@@ -13,6 +13,11 @@ class Api::V1::TicketsController < ApplicationController
       render json: @ticket.new_attributes
       
     end
+
+    def search
+      key = "%#{params[:key]}%"
+      @posts = Post.where("name LIKE ?", key)
+  end
   
     # POST /api/v1/tickets
     def create
