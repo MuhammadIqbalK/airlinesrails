@@ -42,7 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_163421) do
 
   create_table "tickets", force: :cascade do |t|
     t.integer "total_passenger"
-    t.integer "price"
     t.integer "flight_id"
     t.integer "user_id"
     t.datetime "created_at", null: false

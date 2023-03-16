@@ -19,7 +19,7 @@ class Api::V1::AirlinesController < ApplicationController
       @airline = Airline.new(airline_params)
   
       if @airline.save
-        render json: @airline.new_attributes, status: :created, location: @airline
+        render json: @airline.new_attributes, status: :created
       else
         render json: @airline.errors, status: :unprocessable_entity
       end
@@ -50,12 +50,12 @@ class Api::V1::AirlinesController < ApplicationController
       end
   
     # Only allow a list of trusted parameters through.
-    def api_v1_airline_params
+    def airline_params
       # params.require(:api_v1_airline).permit(:name, :role_id)
-      {
-        name: params[:name],
-        code: params[:code]
-      }
+      params.permit(
+        :name,
+        :code
+      )
     end
 
 end

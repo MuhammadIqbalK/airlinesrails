@@ -19,7 +19,7 @@ class Api::V1::TicketsController < ApplicationController
       @ticket = Ticket.new(ticket_params)
   
       if @ticket.save
-        render json: @ticket.new_attributes, status: :created, location: @ticket
+        render json: @ticket.new_attributes, status: :created
       else
         render json: @ticket.errors, status: :unprocessable_entity
       end
@@ -50,13 +50,17 @@ class Api::V1::TicketsController < ApplicationController
       end
   
     # Only allow a list of trusted parameters through.
-    def api_v1_ticket_params
+    def ticket_params
       # params.require(:api_v1_ticket).permit(:name, :role_id)
-      {
-        total_passenger: params[:total_passenger],
-        price: params[:price],
-        user_id: params[:user_id],
-        flight_id: params[:flight_id]
-      }
+      # {
+      #   total_passenger: params[:total_passenger],
+      #   user_id: params[:user_id],
+      #   flight_id: params[:flight_id]
+      # }
+      params.permit(
+        :total_passenger,
+        :user_id,
+        :flight_id
+      )
     end
 end

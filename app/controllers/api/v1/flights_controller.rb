@@ -19,7 +19,7 @@ class Api::V1::FlightsController < ApplicationController
       @flight = Flight.new(flight_params)
   
       if @flight.save
-        render json: @flight.new_attributes, status: :created, location: @flight
+        render json: @flight.new_attributes, status: :created
       else
         render json: @flight.errors, status: :unprocessable_entity
       end
@@ -50,17 +50,17 @@ class Api::V1::FlightsController < ApplicationController
       end
   
     # Only allow a list of trusted parameters through.
-    def api_v1_flight_params
+    def flight_params
       # params.require(:api_v1_flight).permit(:name, :role_id)
-      {
-        departure_airport: params[:departure_airport],
-        arrival_airport: params[:arrival_airport],
-        departure_time: params[:departure_time],
-        arrival_time: params[:arrival_time],
-        price: params[:price],
-        airline_id: params[:airline_id],
-        created_by: params[:created_by]
-      }
+    params.permit( 
+     :departure_airport,
+     :arrival_airport,
+     :departure_time,
+     :arrival_time,
+     :price,
+     :airline_id,
+     :created_by
+    )
     end
 
 end

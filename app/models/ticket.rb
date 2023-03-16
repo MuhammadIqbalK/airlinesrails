@@ -3,7 +3,7 @@ class Ticket < ApplicationRecord
     belongs_to :user
   
     validates :total_passenger, presence: true
-    validates :price, presence: true, length: { maximum: 200 }    
+    # validates :price, presence: true, length: { maximum: 200 }    
     
     def new_attributes
       {

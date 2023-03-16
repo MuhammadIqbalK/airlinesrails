@@ -3,7 +3,7 @@ class User < ApplicationRecord
     
   
   has_many :flights, class_name: "Flight", foreign_key: "created_by", dependent: :destroy
-  has_many :tickets
+  has_many :tickets, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 },
@@ -37,4 +37,7 @@ class User < ApplicationRecord
         created_at: self.created_at
     }
   end
+
+  # scope :by_role, ->  { where(role: 2) }
+  # scope :by_gender, ->('male') { where(gender: 'male') }
 end
