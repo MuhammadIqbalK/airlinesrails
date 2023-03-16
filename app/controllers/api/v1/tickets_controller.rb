@@ -14,10 +14,10 @@ class Api::V1::TicketsController < ApplicationController
       
     end
 
-    def search
-      key = "%#{params[:key]}%"
-      @posts = Post.where("name LIKE ?", key)
-  end
+    # def search
+    #   key = "%#{params[:key]}%"
+    #   @posts = Post.where("name LIKE ?", key)
+    # end
   
     # POST /api/v1/tickets
     def create

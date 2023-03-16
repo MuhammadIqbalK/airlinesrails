@@ -16,6 +16,12 @@ class Api::V1::UsersController < ApplicationController
     
   end
 
+  def search
+    #key = "%#{params}%"
+    render json: User.where("name ILIKE ?", (params[:q]))
+
+  end
+
   # POST /api/v1/users
   def create
     @user = User.new(user_params)
@@ -69,5 +75,9 @@ class Api::V1::UsersController < ApplicationController
     #   role: params[:role],
     #   gender: params[:gender]
     # }
+  end
+
+  def self.display_all(params)
+  
   end
 end
