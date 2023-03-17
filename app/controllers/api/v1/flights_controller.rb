@@ -1,9 +1,12 @@
 class Api::V1::FlightsController < ApplicationController
-    before_action :authenticate_request!, except: :login
+    # before_action :authenticate_request!
     before_action :set_flight, only: [:show, :update, :destroy]
   
     # GET /api/v1/flights
     def index
+      # binding.pry
+      # @flys = Flight.admin_airport(@current_user) if @current_user.admin?
+      # render json: @flys.map { |fly| fly.new_attributes}, status: :ok
       @flights = Flight.all
       render json: @flights.map { |flight| flight.new_attributes }
     end
@@ -58,6 +61,7 @@ class Api::V1::FlightsController < ApplicationController
      :departure_time,
      :arrival_time,
      :price,
+     :capacity,
      :airline_id,
      :created_by
     )

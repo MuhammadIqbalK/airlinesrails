@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_163421) do
     t.datetime "arrival_time"
     t.integer "price"
     t.integer "airline_id"
+    t.integer "capacity"
     t.integer "created_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

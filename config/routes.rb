@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       resources :airports
       resources :tickets
       resources :flights
+      namespace 'users' do
+      end
+      get '/admins', to: 'users#admin'
       post "/login", to: "authentication#authenticate_user"
       # get '/search', to: "tickets#search"
       get '/search', to: "users#search"

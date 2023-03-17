@@ -49,7 +49,7 @@ group :development do
 end
 
 gem 'jwt'
-gem 'dotenv'
+gem 'dotenv-rails'
 # gem 'faker'
 # gem 'rails_admin'
 gem 'sassc-rails'

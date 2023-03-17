@@ -1,5 +1,5 @@
 class Api::V1::AirlinesController < ApplicationController
-    before_action :authenticate_request!, except: :login
+    # before_action :authenticate_request!, except: :login
     before_action :set_airline, only: [:show, :update, :destroy]
   
     # GET /api/v1/airlines

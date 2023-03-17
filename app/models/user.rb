@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :flights, class_name: "Flight", foreign_key: "created_by", dependent: :destroy
   has_many :tickets, dependent: :destroy
 
+  # scope :admin, -> { where(role: 'admin') }
+
   validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
@@ -38,6 +40,7 @@ class User < ApplicationRecord
     }
   end
 
-  # scope :by_role, ->  { where(role: 2) }
-  # scope :by_gender, ->('male') { where(gender: 'male') }
+  # def self.filter
+    
+  # end
 end

@@ -1,7 +1,8 @@
 class Api::V1::AuthenticationController < ApplicationController
+  skip_before_action :authenticate_request, only: [:authenticate_user]
     def authenticate_user
         user = User.find_by_email(params[:email])
-        if user && user.authenticate_password(params[:password])
+        if user&.authenticate(params[:password])
           render json: payload(user)
         else
           render json: {

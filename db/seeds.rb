@@ -98,7 +98,7 @@ Airline.create([
                     
  }
         
- ])
+])
 
 Flight.create([
  {
@@ -108,6 +108,7 @@ Flight.create([
      "arrival_time" => "2023-03-25 10:30",
      "airline_id" => 2,
      "price" => 130000,
+     "capacity" => 100,
      "created_by" => 1
  },
 
@@ -118,6 +119,7 @@ Flight.create([
     "arrival_time" => "2023-03-27 13:30",
     "airline_id" => 1,
     "price" => 160000,
+    "capacity" => 60,
     "created_by" => 3
 },           
 

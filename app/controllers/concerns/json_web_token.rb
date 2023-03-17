@@ -1,15 +1,18 @@
 require 'jwt'
+require 'dotenv/load'
 
 module JsonWebToken
 
   SECRET_KEY = ENV['SECRET_KEY']
 
   def self.AuthorizeApiRequest(headers = {})
+    # binding.pry
     if headers['Authorization'].present?
       token = headers['Authorization'].split(' ').last
       decoded_auth_token = JsonWebToken.decode(token)
+      # binding.pry
       if decoded_auth_token
-        user = User.find(decoded_auth_token[:User_id])
+        user = User.find(decoded_auth_token[:user_id])
         return user if user
       end
     end
